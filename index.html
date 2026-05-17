@@ -5,9 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CarinfoHub - Car Information in Bangladesh</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+<<!-- Login Page -->
+<div id="login-page" class="login-page">
+
+    <div class="login-overlay"></div>
+
+    <div class="login-box">
+
+        <h1>CarinfoHub</h1>
+        <p class="login-text">
+            Explore the best car information platform in Bangladesh
+        </p>
+
+        <input type="email" id="login-email" placeholder="Enter Email">
+
+        <input type="password" id="login-password" placeholder="Enter Password">
+
+        <button onclick="login()" class="btn login-btn">
+            Login
+        </button>
+
+        <p id="login-message"></p>
+
+    </div>
+</div>
+
+
     <!-- Navigation -->
     <nav class="navbar">
         <div class="logo">CarinfoHub</div>
@@ -15,6 +42,8 @@
             <li><a href="#home" class="nav-link active">Home</a></li>
             <li><a href="#car-listings" class="nav-link">Car Listings</a></li>
             <li><a href="#car-details" class="nav-link">Car Details</a></li>
+            <li><a href="#compare" class="nav-link">Compare Cars</a></li>
+            <li><a href="#reviews" class="nav-link">Reviews</a></li>
             <li><a href="#gallery" class="nav-link">Gallery</a></li>
             <li><a href="#about" class="nav-link">About Us</a></li>
             <li><a href="#contact" class="nav-link">Contact Us</a></li>
@@ -32,12 +61,12 @@
             <h2>Featured Cars in Bangladesh</h2>
             <div class="car-grid">
                 <div class="car-card">
-                    <img src="style/toyota_corolla_hybrid_2018_4k-HD.jpg" alt="Toyota Corolla">
+                    <img src="img/toyota_corolla_hybrid_2018_4k-HD.jpg" alt="Toyota Corolla">
                     <h3>Toyota Corolla (Reconditioned)</h3>
                     <p>Price: ৳ 2,500,000 | 2018 Model | 1800cc</p>
                 </div>
                 <div class="car-card">
-                    <img src="style/sleek-black-4k-honda-civic-m4cz5hjwsektluiv.jpg" alt="Honda Civic">
+                    <img src="img/sleek-black-4k-honda-civic-m4cz5hjwsektluiv.jpg" alt="Honda Civic">
                     <h3>Honda Civic (Used)</h3>
                     <p>Price: ৳ 1,800,000 | 2016 Model | 1500cc</p>
                 </div>
@@ -51,7 +80,7 @@
         <p>Browse popular cars available in Bangladesh, including reconditioned and used models.</p>
         <div class="car-grid">
             <div class="car-card">
-                <img src="style/toyota_corolla_hybrid_2018_4k-HD.jpg" alt="Toyota Corolla">
+                <img src="img/toyota_corolla_hybrid_2018_4k-HD.jpg" alt="Toyota Corolla">
                 <h3>Toyota Corolla</h3>
                 <p>Price: ৳ 2,500,000 | 2018 | Reconditioned</p>
                 <p>Engine: 1800cc | Mileage: 45,000 km | Transmission: Automatic</p>
@@ -59,7 +88,7 @@
                 <a href="#car-details" class="btn">View Details</a>
             </div>
             <div class="car-card">
-                <img src="style/sleek-black-4k-honda-civic-m4cz5hjwsektluiv.jpg" alt="Honda Civic">
+                <img src="img/sleek-black-4k-honda-civic-m4cz5hjwsektluiv.jpg" alt="Honda Civic">
                 <h3>Honda Civic</h3>
                 <p>Price: ৳ 1,800,000 | 2016 | Used</p>
                 <p>Engine: 1500cc | Mileage: 60,000 km | Transmission: Manual</p>
@@ -67,7 +96,7 @@
                 <a href="#car-details" class="btn">View Details</a>
             </div>
             <div class="car-card">
-                <img src="style/NISSAN-X-Trail-5054_11.jpg" alt="Nissan X-Trail">
+                <img src="img/NISSAN-X-Trail-5054_11.jpg" alt="Nissan X-Trail">
                 <h3>Nissan X-Trail</h3>
                 <p>Price: ৳ 3,200,000 | 2019 | Reconditioned</p>
                 <p>Engine: 2000cc | Mileage: 30,000 km | Transmission: Automatic</p>
@@ -77,25 +106,245 @@
         </div>
     </section>
 
-    <!-- Car Details Page (Sample for Toyota Corolla) -->
-    <section id="car-details" class="page">
-        <h1>Toyota Corolla Details</h1>
-        <div class="car-detail">
-            <img src="style/toyota_corolla_hybrid_2018_4k-HD.jpg" alt="Toyota Corolla">
-            <div class="car-info">
-                <h2>Toyota Corolla (2018, Reconditioned)</h2>
-                <p><strong>Price:</strong> ৳ 2,500,000</p>
-                <p><strong>Engine:</strong> 1800cc, Petrol</p>
-                <p><strong>Mileage:</strong> 45,000 km</p>
-                <p><strong>Transmission:</strong> Automatic</p>
-                <p><strong>Fuel Economy:</strong> 15 km/l (city), 18 km/l (highway)</p>
-                <p><strong>Condition:</strong> Reconditioned, imported from Japan</p>
-                <p><strong>Availability:</strong> Available in Dhaka at Bikroy and Bhalogari</p>
-                <p><strong>Features:</strong> Keyless entry, ABS, dual airbags, touchscreen infotainment</p>
-                <p>The Toyota Corolla is a top choice in Bangladesh due to its reliability and low maintenance costs. Reconditioned models are popular as they avoid the high import taxes on new cars, which can exceed 100% of the car’s value.</p>
-            </div>
+    <!-- Car Details Page -->
+<section id="car-details" class="page">
+
+    <h1>Car Details</h1>
+
+    <!-- Toyota Corolla -->
+    <div class="car-detail">
+
+        <img src="img/toyota_corolla_hybrid_2018_4k-HD.jpg" alt="Toyota Corolla">
+
+        <div class="car-info">
+
+            <h2>Toyota Corolla (2018, Reconditioned)</h2>
+
+            <p><strong>Price:</strong> ৳ 2,500,000</p>
+
+            <p><strong>Engine:</strong> 1800cc, Petrol</p>
+
+            <p><strong>Mileage:</strong> 45,000 km</p>
+
+            <p><strong>Transmission:</strong> Automatic</p>
+
+            <p><strong>Fuel Economy:</strong> 15 km/l (city), 18 km/l (highway)</p>
+
+            <p><strong>Condition:</strong> Reconditioned, imported from Japan</p>
+
+            <p><strong>Availability:</strong> Available in Dhaka at Bikroy and Bhalogari</p>
+
+            <p><strong>Features:</strong> Keyless entry, ABS, dual airbags, touchscreen infotainment</p>
+
+            <p>
+                The Toyota Corolla is a top choice in Bangladesh due to its reliability and low maintenance costs.
+            </p>
+
         </div>
-    </section>
+
+    </div>
+
+
+    <!-- Honda Civic -->
+    <div class="car-detail">
+
+        <img src="img/sleek-black-4k-honda-civic-m4cz5hjwsektluiv.jpg" alt="Honda Civic">
+
+        <div class="car-info">
+
+            <h2>Honda Civic (2016, Used)</h2>
+
+            <p><strong>Price:</strong> ৳ 1,800,000</p>
+
+            <p><strong>Engine:</strong> 1500cc, Petrol</p>
+
+            <p><strong>Mileage:</strong> 60,000 km</p>
+
+            <p><strong>Transmission:</strong> Manual</p>
+
+            <p><strong>Fuel Economy:</strong> 13 km/l (city), 17 km/l (highway)</p>
+
+            <p><strong>Condition:</strong> Locally used</p>
+
+            <p><strong>Availability:</strong> Available in Chattogram via Bhalogari</p>
+
+            <p><strong>Features:</strong> Push start, rear camera, climate control, sporty design</p>
+
+            <p>
+                The Honda Civic is popular among young drivers for its sporty appearance and fuel efficiency.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- Nissan X-Trail -->
+    <div class="car-detail">
+
+        <img src="img/NISSAN-X-Trail-5054_11.jpg" alt="Nissan X-Trail">
+
+        <div class="car-info">
+
+            <h2>Nissan X-Trail (2019, Reconditioned)</h2>
+
+            <p><strong>Price:</strong> ৳ 3,200,000</p>
+
+            <p><strong>Engine:</strong> 2000cc Hybrid</p>
+
+            <p><strong>Mileage:</strong> 30,000 km</p>
+
+            <p><strong>Transmission:</strong> Automatic</p>
+
+            <p><strong>Fuel Economy:</strong> 16 km/l (city), 19 km/l (highway)</p>
+
+            <p><strong>Condition:</strong> Reconditioned, imported from Japan</p>
+
+            <p><strong>Availability:</strong> Available in Sylhet via Carniba</p>
+
+            <p><strong>Features:</strong> Hybrid technology, sunroof, 360° camera, premium interior</p>
+
+            <p>
+                The Nissan X-Trail is a premium family SUV known for comfort, safety, and hybrid performance.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+    <!-- Car Comparison Page -->
+<section id="compare" class="page">
+
+    <h1>Compare Cars</h1>
+
+    <p>
+        Compare specifications, prices, mileage, and performance of cars available in Bangladesh.
+    </p>
+
+    <!-- Search Bar -->
+    <div class="compare-search">
+
+        <input type="text"
+        id="carSearch"
+        placeholder="Search car name..."
+        onkeyup="searchCars()">
+
+    </div>
+
+    <!-- Car Selection -->
+    <div class="compare-selection">
+
+        <select id="car1">
+            <option value="">Select First Car</option>
+            <option value="corolla">Toyota Corolla</option>
+            <option value="civic">Honda Civic</option>
+            <option value="xtrail">Nissan X-Trail</option>
+        </select>
+
+        <select id="car2">
+            <option value="">Select Second Car</option>
+            <option value="corolla">Toyota Corolla</option>
+            <option value="civic">Honda Civic</option>
+            <option value="xtrail">Nissan X-Trail</option>
+        </select>
+
+        <button class="btn" onclick="compareCars()">
+            Compare
+        </button>
+
+    </div>
+
+    <!-- Comparison Result -->
+    <div id="comparison-result" class="comparison-result"></div>
+
+</section>
+
+<!-- Review Section -->
+<section id="reviews" class="page">
+
+    <div class="review-container">
+
+        <h1>Car Reviews</h1>
+
+        <p class="review-subtitle">
+            Search, select, and review your favorite car
+        </p>
+
+        <!-- Search Car -->
+        <div class="review-search">
+
+            <input type="text"
+            id="reviewSearch"
+            placeholder="Search car name..."
+            onkeyup="filterCars()">
+
+        </div>
+
+        <!-- Select Car -->
+        <div class="review-select">
+
+            <select id="selectedCar">
+
+                <option value="">Choose a Car</option>
+
+                <option value="Toyota Corolla">
+                    Toyota Corolla
+                </option>
+
+                <option value="Honda Civic">
+                    Honda Civic
+                </option>
+
+                <option value="Nissan X-Trail">
+                    Nissan X-Trail
+                </option>
+
+            </select>
+
+        </div>
+
+        <!-- Stars -->
+        <div class="star-rating">
+
+            <span class="star" onclick="rateStar(1)">★</span>
+            <span class="star" onclick="rateStar(2)">★</span>
+            <span class="star" onclick="rateStar(3)">★</span>
+            <span class="star" onclick="rateStar(4)">★</span>
+            <span class="star" onclick="rateStar(5)">★</span>
+
+        </div>
+
+        <p id="rating-text">Select Rating</p>
+
+        <!-- Review Form -->
+        <div class="review-form">
+
+            <input type="text"
+            id="review-name"
+            placeholder="Your Name">
+
+            <textarea
+            id="review-message"
+            placeholder="Write your review here..."></textarea>
+
+            <button class="btn review-btn"
+            onclick="submitReview()">
+
+                Submit Review
+
+            </button>
+
+        </div>
+
+        <!-- Review Output -->
+        <div id="review-output" class="review-output"></div>
+
+    </div>
+
+</section>
+
 
     <!-- Gallery Page -->
     <section id="gallery" class="page">
@@ -103,19 +352,19 @@
         <p>Explore pictures of popular cars in Bangladesh.</p>
         <div class="gallery-grid">
             <div class="gallery-item">
-                <img src="style/toyota_corolla_hybrid_2018_4k-HD.jpg" alt="Toyota Corolla">
+                <img src="img/toyota_corolla_hybrid_2018_4k-HD.jpg" alt="Toyota Corolla">
                 <p>Toyota Corolla (2018) - A reliable sedan, widely used in Dhaka.</p>
             </div>
             <div class="gallery-item">
-                <img src="style/sleek-black-4k-honda-civic-m4cz5hjwsektluiv.jpg" alt="Honda Civic">
+                <img src="img/sleek-black-4k-honda-civic-m4cz5hjwsektluiv.jpg" alt="Honda Civic">
                 <p>Honda Civic (2016) - Popular for its fuel efficiency in Chattogram.</p>
             </div>
             <div class="gallery-item">
-                <img src="style/NISSAN-X-Trail-5054_11.jpg" alt="Nissan X-Trail">
+                <img src="img/NISSAN-X-Trail-5054_11.jpg" alt="Nissan X-Trail">
                 <p>Nissan X-Trail (2019) - Hybrid SUV, ideal for family trips in Sylhet.</p>
             </div>
             <div class="gallery-item">
-                <img src="style/799970-2015-Outlander-AU-spec-Mitsubishi-Red.jpg" alt="Mitsubishi Outlander">
+                <img src="img/799970-2015-Outlander-AU-spec-Mitsubishi-Red.jpg" alt="Mitsubishi Outlander">
                 <p>Mitsubishi Outlander (2017) - Spacious SUV, available in Rajshahi.</p>
             </div>
         </div>
@@ -132,14 +381,13 @@
         <h1>Contact Us</h1>
         <p>Have questions about cars in Bangladesh? Reach out to us!</p>
         <form class="contact-form">
-            <label for="name"></label>
+            <label for="name">Name:</label>
             <input type="text" id="name" placeholder="Your name" required>
-            <label for="email"></label>
+            <label for="email">Email:</label>
             <input type="email" id="email" placeholder="Your email" required>
-            <label for="message"></label>
+            <label for="message">Message:</label>
             <textarea id="message" placeholder="Your message..." required></textarea>
             <input type="submit" value="Send Message" class="btn">
-            
         </form>
     </section>
 
@@ -147,6 +395,8 @@
     <footer>
         <p>© 2025 CarinfoHub. All rights reserved.</p>
     </footer>
+
+
 
     <!-- JavaScript for Navigation -->
     <script>
@@ -171,6 +421,264 @@
                 this.classList.add('active');
             });
         });
+
+        // Login System
+    function login() {
+
+        const email = document.getElementById("login-email").value;
+        const password = document.getElementById("login-password").value;
+
+        const correctEmail = "CarInfoHub12345@gmail.com";
+        const correctPassword = "1122334455";
+
+        if(email === correctEmail && password === correctPassword){
+
+            document.getElementById("login-page").style.display = "none";
+
+        } else {
+
+            document.getElementById("login-message").innerText =
+            "Incorrect Email or Password";
+
+        }
+    }
+
+
+ 
+    // Car Data
+const cars = {
+
+    corolla: {
+        name: "Toyota Corolla",
+        price: "৳ 2,500,000",
+        engine: "1800cc",
+        mileage: "45,000 km",
+        transmission: "Automatic",
+        image: "img/toyota_corolla_hybrid_2018_4k-HD.jpg"
+    },
+
+    civic: {
+        name: "Honda Civic",
+        price: "৳ 1,800,000",
+        engine: "1500cc",
+        mileage: "60,000 km",
+        transmission: "Manual",
+        image: "img/sleek-black-4k-honda-civic-m4cz5hjwsektluiv.jpg"
+    },
+
+    xtrail: {
+        name: "Nissan X-Trail",
+        price: "৳ 3,200,000",
+        engine: "2000cc",
+        mileage: "30,000 km",
+        transmission: "Automatic",
+        image: "img/NISSAN-X-Trail-5054_11.jpg"
+    }
+
+};
+
+
+// Compare Cars
+function compareCars(){
+
+    const firstCar = document.getElementById("car1").value;
+    const secondCar = document.getElementById("car2").value;
+
+    if(firstCar === "" || secondCar === ""){
+
+        alert("Please select two cars");
+        return;
+    }
+
+    const carA = cars[firstCar];
+    const carB = cars[secondCar];
+
+    document.getElementById("comparison-result").innerHTML = `
+
+        <div class="compare-card">
+
+            <img src="${carA.image}" alt="${carA.name}" class="compare-image">
+
+            <h2>${carA.name}</h2>
+
+            <p><strong>Price:</strong> ${carA.price}</p>
+
+            <p><strong>Engine:</strong> ${carA.engine}</p>
+
+            <p><strong>Mileage:</strong> ${carA.mileage}</p>
+
+            <p><strong>Transmission:</strong> ${carA.transmission}</p>
+
+        </div>
+
+        <div class="compare-card">
+
+            <img src="${carB.image}" alt="${carB.name}" class="compare-image">
+
+            <h2>${carB.name}</h2>
+
+            <p><strong>Price:</strong> ${carB.price}</p>
+
+            <p><strong>Engine:</strong> ${carB.engine}</p>
+
+            <p><strong>Mileage:</strong> ${carB.mileage}</p>
+
+            <p><strong>Transmission:</strong> ${carB.transmission}</p>
+
+        </div>
+
+    `;
+}
+
+
+
+// Search Cars
+function searchCars(){
+
+    const input =
+    document.getElementById("carSearch").value.toLowerCase();
+
+    const selects =
+    document.querySelectorAll(".compare-selection select");
+
+    selects.forEach(select => {
+
+        for(let i = 0; i < select.options.length; i++){
+
+            const text =
+            select.options[i].text.toLowerCase();
+
+            if(text.includes(input) || input === ""){
+
+                select.options[i].style.display = "block";
+
+            } else {
+
+                select.options[i].style.display = "none";
+            }
+        }
+    });
+}
+
+
+// Review Rating
+let selectedRating = 0;
+
+function rateStar(rating){
+
+    selectedRating = rating;
+
+    const stars = document.querySelectorAll(".star");
+
+    stars.forEach((star, index) => {
+
+        if(index < rating){
+
+            star.classList.add("active");
+
+        } else {
+
+            star.classList.remove("active");
+        }
+    });
+
+    document.getElementById("rating-text").innerText =
+    rating + " Star Rating";
+}
+
+
+// Submit Review
+function submitReview(){
+
+    const selectedCar =
+    document.getElementById("selectedCar").value;
+
+    const name =
+    document.getElementById("review-name").value;
+
+    const message =
+    document.getElementById("review-message").value;
+
+    if(
+        selectedCar === "" ||
+        name === "" ||
+        message === "" ||
+        selectedRating === 0
+    ){
+
+        alert("Please complete the review form");
+        return;
+    }
+
+    let stars = "";
+
+    for(let i = 0; i < selectedRating; i++){
+
+        stars += "★";
+    }
+
+    const reviewCard = `
+
+        <div class="review-card">
+
+            <h3>${selectedCar}</h3>
+
+            <div class="review-stars">${stars}</div>
+
+            <h4>Reviewed by: ${name}</h4>
+
+            <p>${message}</p>
+
+        </div>
+
+    `;
+
+    document.getElementById("review-output").innerHTML += reviewCard;
+
+    // Reset
+    document.getElementById("selectedCar").value = "";
+    document.getElementById("review-name").value = "";
+    document.getElementById("review-message").value = "";
+
+    selectedRating = 0;
+
+    document.querySelectorAll(".star").forEach(star => {
+        star.classList.remove("active");
+    });
+
+    document.getElementById("rating-text").innerText =
+    "Select Rating";
+}
+
+
+// Search Cars in Review Section
+function filterCars(){
+
+    const input =
+    document.getElementById("reviewSearch")
+    .value
+    .toLowerCase();
+
+    const select =
+    document.getElementById("selectedCar");
+
+    for(let i = 0; i < select.options.length; i++){
+
+        const text =
+        select.options[i].text.toLowerCase();
+
+        if(text.includes(input) || input === ""){
+
+            select.options[i].style.display = "block";
+
+        } else {
+
+            select.options[i].style.display = "none";
+        }
+    }
+}
+
+
     </script>
 </body>
 </html>
