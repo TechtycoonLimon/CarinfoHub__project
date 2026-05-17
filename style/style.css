@@ -9,6 +9,152 @@ body {
     color: #333;
 }
 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+/* Login Page */
+.login-page{
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    margin: 0;
+    padding: 0;
+
+    background:
+    linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+    url("img/car background img.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 9999;
+
+    font-family: 'Poppins', sans-serif;
+
+    overflow: hidden;
+}
+
+.login-box{
+    width: 360px;
+
+    background: rgba(255,255,255,0.12);
+
+    backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(255,255,255,0.2);
+
+    border-radius: 20px;
+
+    padding: 40px;
+
+    text-align: center;
+
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+
+    animation: fadeIn 1s ease;
+}
+
+.login-box h1{
+    color: white;
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+.login-text{
+    color: #ddd;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+.login-box input{
+    width: 100%;
+
+    padding: 14px;
+
+    margin: 12px 0;
+
+    border: none;
+
+    border-radius: 10px;
+
+    outline: none;
+
+    font-size: 15px;
+
+    background: rgba(255,255,255,0.15);
+
+    color: white;
+}
+
+.login-box input::placeholder{
+    color: #ddd;
+}
+
+.login-btn{
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #ff3c00;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.login-btn:hover{
+    background: #ff5c26;
+    transform: scale(1.03);
+}
+
+#login-message{
+    margin-top: 15px;
+    color: #ffb3b3;
+    font-size: 14px;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
 /* Navigation */
 .navbar {
     background: rgba(255, 255, 255, 0.95);
@@ -158,6 +304,7 @@ p {
     padding: 30px;
     border-radius: 12px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 60px;
 }
 
 .car-detail img {
@@ -174,6 +321,302 @@ p {
 .car-info h2 {
     color: #ff7e5f;
 }
+
+/* ================= CAR COMPARISON ================= */
+
+.compare-search{
+    text-align: center;
+    margin: 30px 0;
+}
+
+.compare-search input{
+    width: 320px;
+    padding: 14px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+.compare-selection{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.compare-selection select{
+    padding: 14px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    min-width: 220px;
+    font-size: 15px;
+}
+
+.comparison-result{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.compare-card{
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    width: 320px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.compare-card h2{
+    margin-bottom: 15px;
+}
+
+.compare-card p{
+    margin: 10px 0;
+}
+
+.compare-card img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.compare-image{
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+
+/* ================= REVIEW SECTION ================= */
+
+.review-container{
+    width: 90%;
+    max-width: 900px;
+
+    margin: auto;
+
+    padding: 50px 30px;
+
+    border-radius: 25px;
+
+    background:
+    linear-gradient(135deg, #111, #1f1f1f);
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+
+    text-align: center;
+
+    color: white;
+}
+
+.review-container h1{
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+.review-subtitle{
+    color: #ccc;
+    margin-bottom: 35px;
+    font-size: 16px;
+}
+
+/* Stars */
+
+.star-rating{
+    margin-bottom: 20px;
+}
+
+.star{
+    font-size: 45px;
+    cursor: pointer;
+    color: #555;
+    transition: 0.3s;
+}
+
+.star:hover{
+    transform: scale(1.2);
+    color: gold;
+}
+
+.star.active{
+    color: gold;
+}
+
+#rating-text{
+    margin-bottom: 25px;
+    color: #ddd;
+    font-size: 18px;
+}
+
+/* Form */
+
+.review-form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.review-form input,
+.review-form textarea{
+
+    width: 100%;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: #2c2c2c;
+
+    color: white;
+
+    font-size: 15px;
+
+    outline: none;
+}
+
+.review-form textarea{
+    height: 150px;
+    resize: none;
+}
+
+.review-btn{
+    background: linear-gradient(45deg, #ff3c00, #ff7b00);
+
+    border: none;
+
+    padding: 15px;
+
+    border-radius: 12px;
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.review-btn:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(255,120,0,0.3);
+}
+
+/* Review Cards */
+
+.review-output{
+    margin-top: 40px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.review-card{
+
+    background: #1d1d1d;
+
+    border-left: 5px solid gold;
+
+    padding: 25px;
+
+    border-radius: 15px;
+
+    text-align: left;
+
+    animation: fadeReview 0.5s ease;
+}
+
+.review-card h3{
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.review-stars{
+    color: gold;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.review-card p{
+    color: #ccc;
+    line-height: 1.6;
+}
+
+@keyframes fadeReview{
+
+    from{
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Search + Select */
+
+.review-search{
+    margin-bottom: 20px;
+}
+
+.review-search input{
+
+    width: 100%;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: #2c2c2c;
+
+    color: white;
+
+    font-size: 15px;
+
+    outline: none;
+}
+
+.review-select{
+    margin-bottom: 30px;
+}
+
+.review-select select{
+
+    width: 100%;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: #2c2c2c;
+
+    color: white;
+
+    font-size: 15px;
+
+    outline: none;
+}
+
+
 
 /* Gallery */
 .gallery-grid {
@@ -210,12 +653,8 @@ p {
     padding: 30px;
     border-radius: 12px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
-    margin: 120px auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .contact-form label {
@@ -227,7 +666,7 @@ p {
 
 .contact-form input,
 .contact-form textarea {
-    width: 70%;
+    width: 100%;
     padding: 12px;
     margin-bottom: 20px;
     border: 2px solid #d1d5db;
