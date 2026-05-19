@@ -723,3 +723,14 @@ footer {
     .car-detail { flex-direction: column; }
     .car-detail img, .car-info { width: 100%; }
 }
+
+/* Button */
+.btn-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.btn-group .login-btn {
+    flex: 1;
+}
