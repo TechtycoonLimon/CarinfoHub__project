@@ -422,28 +422,6 @@
             });
         });
 
-        // Login System
-    function login() {
-
-        const email = document.getElementById("login-email").value;
-        const password = document.getElementById("login-password").value;
-
-        const correctEmail = "CarInfoHub12345@gmail.com";
-        const correctPassword = "1122334455";
-
-        if(email === correctEmail && password === correctPassword){
-
-            document.getElementById("login-page").style.display = "none";
-
-        } else {
-
-            document.getElementById("login-message").innerText =
-            "Incorrect Email or Password";
-
-        }
-    }
-
-
  
     // Car Data
 const cars = {
@@ -681,4 +659,8 @@ function filterCars(){
 
     </script>
 </body>
+
+// Login system   
+<script src="login.js"></script>
+    
 </html>
